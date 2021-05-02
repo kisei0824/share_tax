@@ -1,0 +1,18 @@
+.app-title.navbar.navbar-expand-md.bg-light {
+  background-color: orange;
+  position:relative;
+  top:-1px;
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  .navbar-brand {
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    padding-right: 10px;
+    .navbar-right {
+      text-align: right;
+    }
+  }
+}  
+  

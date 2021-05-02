@@ -1,3 +1,107 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.contents {
+  background-color: yellow;
+  height:1200px;
+  width:960px;
+  margin: auto;
+  .search-content {
+    background-color: red;
+    width:720px;
+    height:230px;
+    margin: auto;
+    .form-control {
+      width: 200px;
+      height: 30px;
+    }
+  }
+    .form-group {
+      text-align: center;
+      padding:80px 0;
+      .btn {
+        width: 100px;
+        position: relative;
+        top: -50px;
+      }
+    }
+  
+  .text-content {
+    background-color: blue;
+    height:800px;
+    width:720px;
+    margin: auto;
+    color: white;
+    table {
+      text-align: center;
+      margin: auto;
+      font-size: 30px;
+    }
+      .nav-link {
+        color: white;
+      }
+  }
+}
+
+
+
+// .list {
+// background-color: yellow;
+// font-size:20px;
+// height:60px;
+// width:33%;
+// text-align: center;
+// list-style:none;
+// float:left;
+// }
+// .list--black {
+//   background-color: black;
+//   height:60px;
+//   width:33%;
+//   color:yellow;
+// }
+
+// .left-content {
+//   height:300px;
+//   width:300px;
+//   background-color:red;
+// }
+
+// .right-content {
+//   background-color: green;
+//   float: right;
+//   height: 500px;
+//   width: 200px;
+// }
+
+// .contents {
+//   background-color: gray;
+//   height: 800px;
+//   padding-top: 60px;
+//   width: 960px;
+//   margin: 0 auto;
+// }
+
+// .left-content {
+//   background-color: red;
+//   float: left;
+//   height: 300px;
+//   position: relative;
+//   width: 300px;
+// }
+
+// .blue-content {
+//   background-color: blue;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   margin: auto;
+//   width: 200px;
+//   height: 200px;
+// }
+
+// .right-content {
+//   background-color: green;
+//   float: right;
+//   height: 500px;
+//   width: 200px;
+// }
