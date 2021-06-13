@@ -11,12 +11,24 @@ html
                   =f.search_field :title_cont, class: 'form-control'
                 .form-group
                   =f.submit class: 'btn'
-          div class="text-content"
-            table
-              tr
-                th= Post.human_attribute_name(:tax)
-                th= Post.human_attribute_name(:title)
+          div class="searchResult"
+            div class="searchResult_main"
+              MasatoraAtarashi が2020/08/29に投稿
+            div class="searchResult_sub"
               - @posts.each do |post|
                   tr 
-                    td= link_to post.tax, root_path, class: "nav-link"
-                    td= link_to post.title, root_path, class: "nav-link"
+                    h1 class="searchResult-title"= link_to post.tax, root_path
+                    div class="searchResult-text"= link_to post.title, root_path
+
+        / div class="searchResultContainer"
+        /   div class="searchResultContainer_main"
+        /     div class="searchResult"
+        /     div class="searchResult_main"
+        /       MasatoraAtarashi が2020/08/29に投稿
+        /       - @posts.each do |post|
+        /           tr 
+        /             h1 td=link_to post.tax, root_path, class: "nav-link"
+        /             div td=link_to post.title, root_path, class: "nav-link"
+        /     div class="searchResult_sub"
+        /       ul class="list-unstyled list-inline searchResult_statusList"
+        /         li class="searchResult_commentsCount"
