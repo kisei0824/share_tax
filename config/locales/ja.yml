@@ -1,0 +1,7 @@
+ja:
+    models:
+      post: 投稿
+    attributes:
+      post:
+        tax: 税目
+        created_at: 登録日時
