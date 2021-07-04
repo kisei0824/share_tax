@@ -1,0 +1,15 @@
+current directory: /Users/iwahashikisei/projects/share_tax/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.5.1/ext/bootsnap
+/Users/iwahashikisei/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20210704-3398-57ipc1.rb extconf.rb
+creating Makefile
+
+current directory: /Users/iwahashikisei/projects/share_tax/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.5.1/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/iwahashikisei/projects/share_tax/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.5.1/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/iwahashikisei/projects/share_tax/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.5.1/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20210704-3398-1n5tuha/bootsnap
