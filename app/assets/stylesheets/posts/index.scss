@@ -35,10 +35,19 @@
     }
   }
 }
+.searchResult-text {
+  display: block;
+  padding: 10px;
+  border: 1px solid #222;
+  background-color: #FFF;
+  color: #222;
+  border-radius: 6px;
+  text-align: center;
+}
 
 .searchResult-text {
   // color: white;
-  border-bottom: 1px solid #eee;
+  // border-bottom: 1px solid #eee;
 }
 
 
