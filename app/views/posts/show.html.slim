@@ -7,6 +7,9 @@ html
             div=@post.created_at
             h1=@post.title
             divh2= @post.description
+
+            div=link_to '編集', edit_post_path
+            div=link_to '削除', @post, method: :delete, data: {confirm: "本当に削除してよろしいですか?"}
             / <h1>
             / <span id="railsrailsチュートリアルでの学び" class="fragment"></span><a href="#railsrails%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB%E3%81%A7%E3%81%AE%E5%AD%A6%E3%81%B3"><i class="fa fa-link"></i></a>【Rails】Railsチュートリアルでの学び</h1>
             / <h2>
