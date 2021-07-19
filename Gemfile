@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 #gem 'therubyracer'
 gem 'mini_racer'
-gem 'bootstrap'
+# gem 'bootstrap'
 gem 'bootstrap-sass'
 gem 'ransack'
 gem 'devise'

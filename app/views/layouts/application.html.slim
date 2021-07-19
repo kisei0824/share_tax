@@ -13,6 +13,7 @@ html
         = link_to 'Share_Tax', root_path
         .navbar-right
           - if user_signed_in?
+            = link_to '投稿する', new_post_path
             = link_to 'ログアウト', destroy_user_session_path, method: :delete
           - else 
             = link_to 'ログイン', user_session_path

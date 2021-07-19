@@ -1,3 +1,0 @@
-current directory: /Users/iwahashikisei/projects/share_tax/vendor/bundle/ruby/2.5.0/gems/mimemagic-0.3.10/ext/mimemagic
-/Users/iwahashikisei/.rbenv/versions/2.5.1/bin/ruby -rrubygems /Users/iwahashikisei/projects/share_tax/vendor/bundle/ruby/2.5.0/gems/rake-13.0.3/exe/rake RUBYARCHDIR=/Users/iwahashikisei/projects/share_tax/vendor/bundle/ruby/2.5.0/extensions/x86_64-darwin-18/2.5.0/mimemagic-0.3.10 RUBYLIBDIR=/Users/iwahashikisei/projects/share_tax/vendor/bundle/ruby/2.5.0/extensions/x86_64-darwin-18/2.5.0/mimemagic-0.3.10
-mkdir -p /Users/iwahashikisei/projects/share_tax/vendor/bundle/ruby/2.5.0/extensions/x86_64-darwin-18/2.5.0/mimemagic-0.3.10/mimemagic
