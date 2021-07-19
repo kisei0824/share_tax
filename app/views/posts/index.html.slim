@@ -17,8 +17,8 @@ html
             div class="searchResult_sub"
               - @posts.each do |post|
                   tr 
-                    h1 class="searchResult-title"= link_to post.tax, root_path
-                    div class="searchResult-text"= link_to post.title, root_path
+                    h1 class="searchResult-title"= link_to post.title
+                    div class="searchResult-text" = link_to "続きを読む", post_path(post)
 
         / div class="searchResultContainer"
         /   div class="searchResultContainer_main"
