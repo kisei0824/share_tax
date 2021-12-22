@@ -17,7 +17,7 @@ html
             div class="searchResult_sub"
               - @posts.each do |post|
                   tr 
-                    h1 class="searchResult-title"= link_to post.title
+                    h4 class="searchResult-title"= link_to post.title
                     div class="searchResult-text" = link_to "続きを読む", post_path(post)
 
         / div class="searchResultContainer"
@@ -32,3 +32,4 @@ html
         /     div class="searchResult_sub"
         /       ul class="list-unstyled list-inline searchResult_statusList"
         /         li class="searchResult_commentsCount"
+
