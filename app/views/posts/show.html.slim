@@ -9,16 +9,24 @@ html
             h1=@post.title
             divh2= @post.description
 
-            div=link_to '編集', edit_post_path
-            div=link_to '削除', @post, method: :delete, data: {confirm: "本当に削除してよろしいですか?"}
+            - if @post.user == current_user
+              div=link_to '編集', edit_post_path
+              div=link_to '削除', @post, method: :delete, data: {confirm: "本当に削除してよろしいですか?"}
 
+            h3= @post.likes.count
             - if current_user
-              <h2>コメント一覧</h2>
-                = form_with(model:[@post, @comment], method: :post) do |f|
-                  = f.text_area :content
-                  = f.hidden_field :post_id, value: @post.id
-                  = f.submit 'コメントする'
+              - if @post.user != current_user
+                - if current_user.already_liked?(@post)
+                  = button_to 'いいねを取り消す', post_like_path(@post), method: :delete
+                - else
+                  = button_to 'いいね', post_likes_path(@post)
 
-              <h2>コメント一覧</h2>
-                - @comments.each do |comment|
-                  = comment.content
+                <h2>コメント一覧</h2>
+                  = form_with(model:[@post, @comment], method: :post) do |f|
+                    = f.text_area :content
+                    = f.hidden_field :post_id, value: @post.id
+                    = f.submit 'コメントする'
+
+                <h2>コメント一覧</h2>
+                  - @comments.each do |comment|
+                    = comment.content

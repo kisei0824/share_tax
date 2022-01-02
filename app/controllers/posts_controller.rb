@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
   def index
     @q = Post.ransack(params[:q])
     @posts = @q.result(distinct: true)
@@ -9,6 +10,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comments = @post.comments.includes(:user)
     @comment = @post.comments.build
+    @like = Like.new
   end
 
   def new
