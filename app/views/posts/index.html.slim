@@ -19,6 +19,9 @@ html
                   tr 
                     h4 class="searchResult-title"= link_to post.title
                     div class="searchResult-text" = link_to "続きを読む", post_path(post)
+              ul
+                - @posts.each do |post|
+                = paginate @posts
         
         / h3 = @posts.content 
         / h3いいね件数: = @posts.likes.count
