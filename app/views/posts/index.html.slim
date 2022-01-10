@@ -6,9 +6,8 @@ html
           div class="search-content"
             = search_form_for @q, class: 'mb-5' do |f|
               .form-group.row
-                =f.label :title_cont, 'ここに入力して検索', class: 'col-sm2 col-form-label'
                 .col-sm-10
-                  =f.search_field :title_cont, class: 'form-control'
+                  =f.search_field :title_cont, class: 'form-control',placeholder: 'キーワードを入力'
                 .form-group
                   =f.submit class: 'btn'
           div class="searchResult"

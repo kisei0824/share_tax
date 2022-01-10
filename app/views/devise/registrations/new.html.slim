@@ -1,0 +1,31 @@
+html
+  head 
+    body
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| 
+        = render "devise/shared/error_messages", resource: resource 
+
+        div class="form"
+          .field
+          div class="login-form"
+            div class="mail-field" 
+              = f.label :email, "メールアドレス"
+              br
+              = f.email_field :email, autofocus: true, autocomplete: "email"
+            .field
+            div class="password-field"
+              = f.label :password, "パスワード"
+              - if @minimum_password_length
+                em
+                  | (
+                  = @minimum_password_length
+                  | 文字以上)
+              br
+              = f.password_field :password, autocomplete: "new-password"
+            .field
+              = f.label :password_confirmation, "パスワード(確認用)"
+              br
+              = f.password_field :password_confirmation, autocomplete: "new-password"
+            .actions
+              div class="field"
+              = f.submit "新規会員登録"
+        div class="bottom-form"
