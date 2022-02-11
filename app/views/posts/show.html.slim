@@ -1,32 +1,37 @@
 html
   head
     body
-      table.table.table-hover
-        tbody 
-          tr 
-            div=@post.created_at
-            h1=@post.tax
-            h1=@post.title
-            divh2= @post.description
+      header class="header"
+        div class="contents"
+          div class="likes_count"
+          = @post.likes.count
 
-            - if @post.user == current_user
-              div=link_to '編集', edit_post_path
-              div=link_to '削除', @post, method: :delete, data: {confirm: "本当に削除してよろしいですか?"}
+          div class="likes"
+          - if current_user
+            - if @post.user != current_user
+              - if current_user.already_liked?(@post)
+                = button_to 'いいねを取り消す', post_like_path(@post), method: :delete, class: "likebutton"
+              - else
+                = button_to 'いいね', post_likes_path(@post), class: "likebutton"
+          
+          - if @post.user == current_user
+              =link_to '編集', edit_post_path
+              =link_to '削除', @post, method: :delete, data: {confirm: "本当に削除してよろしいですか?"}
+          div class="show-content"
+            div=@post.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[@post.created_at.wday]})")
+            h5=@post.tax
+            h2=@post.title
+            divh3= @post.description
+          div class="searchResult"
+            div class="searchResult_main"
+              <h2>コメント</h2>
+                = form_with(model:[@post, @comment], method: :post) do |f|
+                  = f.text_area :content, :size => "90*90"
+                  = f.hidden_field :post_id, value: @post.id
+                  = f.submit 'コメントする'
 
-            h3= @post.likes.count
-            - if current_user
-              - if @post.user != current_user
-                - if current_user.already_liked?(@post)
-                  = button_to 'いいねを取り消す', post_like_path(@post), method: :delete
-                - else
-                  = button_to 'いいね', post_likes_path(@post)
-
-                <h2>コメント一覧</h2>
-                  = form_with(model:[@post, @comment], method: :post) do |f|
-                    = f.text_area :content
-                    = f.hidden_field :post_id, value: @post.id
-                    = f.submit 'コメントする'
-
-                <h2>コメント一覧</h2>
-                  - @comments.each do |comment|
-                    = comment.content
+              <h2>コメント一覧</h2>
+                - @comments.each do |comment|
+                  h5= comment.user_id
+                  h4= comment.content
+            div class="searchResult_sub"

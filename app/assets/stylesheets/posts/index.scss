@@ -1,7 +1,5 @@
 .contents {
-  background-color: #f6f6f4;;
-  // height:600px;
-  // width:960px;
+  background-color: #f6f6f4;
   margin: auto;
   .search-content {
     background-color: white;
@@ -13,6 +11,15 @@
       width: 200px;
       height: 30px;
     }
+    .btn {
+      display: block;
+      margin: auto;
+      border-radius: 4px;
+      border: 1px solid orange;
+      background: orange;
+      color: #fff;
+      line-height: 40px;
+    }
   }
     .form-group {
       text-align: center;
@@ -22,8 +29,7 @@
         position: relative;
         top: -50px;
       }
-    }
-  
+    } 
   .searchResult {
     background-color: white;
     width:720px;
@@ -43,76 +49,5 @@
   color: #222;
   border-radius: 6px;
   text-align: center;
+  width: 680px;
 }
-
-.searchResult-text {
-  // color: white;
-  // border-bottom: 1px solid #eee;
-}
-
-
-
-
-// .list {
-// background-color: yellow;
-// font-size:20px;
-// height:60px;
-// width:33%;
-// text-align: center;
-// list-style:none;
-// float:left;
-// }
-// .list--black {
-//   background-color: black;
-//   height:60px;
-//   width:33%;
-//   color:yellow;
-// }
-
-// .left-content {
-//   height:300px;
-//   width:300px;
-//   background-color:red;
-// }
-
-// .right-content {
-//   background-color: green;
-//   float: right;
-//   height: 500px;
-//   width: 200px;
-// }
-
-// .contents {
-//   background-color: gray;
-//   height: 800px;
-//   padding-top: 60px;
-//   width: 960px;
-//   margin: 0 auto;
-// }
-
-// .left-content {
-//   background-color: red;
-//   float: left;
-//   height: 300px;
-//   position: relative;
-//   width: 300px;
-// }
-
-// .blue-content {
-//   background-color: blue;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   margin: auto;
-//   width: 200px;
-//   height: 200px;
-// }
-
-// .right-content {
-//   background-color: green;
-//   float: right;
-//   height: 500px;
-//   width: 200px;
-// }

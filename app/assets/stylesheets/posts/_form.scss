@@ -1,0 +1,32 @@
+.post-contents {
+  background-color: #f6f6f4;
+  text-align: center;
+  height:500px;
+  .tax-group {
+    padding:10px 0;
+    .tax-control {
+      width: 50%;
+      height: 30px;
+    }
+  }
+  .title-group {
+    padding:10px 0;
+    .title-control {
+      width: 50%;
+      height: 30px;
+    }
+  }
+  .description-group {
+    padding:10px 0;
+    .description-control {
+      width: 50%;
+      height: 200px;
+    }
+  }
+  .btn-primary {
+    color: #fff;
+    background-color: orange;
+    border-radius: 100vh;
+  }
+}
+
