@@ -6,13 +6,38 @@
   // position: fixed;
   width: 100%;
   .navbar-brand {
-    color: white;
-    text-align: center;
+    // text-align: center;
     font-size: 25px;
-    padding-right: 10px;
+    padding-right: 10px; 
+    .title {
+      text-decoration: none;
+      color: white;
+      font-family: 'Caveat', cursive;
+    }
     .navbar-right {
       text-align: right;
+      .post {
+        text-decoration: none;
+        color: white;
+        padding: 20px;
+      }
+      .logaout {
+        text-decoration: none;
+        color: white;
+      }
+      .login {
+        text-decoration: none;
+        color: white;
+        padding: 20px;
+      }
+      .registration {
+        text-decoration: none;
+        color: white;
+      }
     }
   }
 }  
+
+
+
   

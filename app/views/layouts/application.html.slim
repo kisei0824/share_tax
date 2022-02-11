@@ -10,13 +10,13 @@ html
   body
     .app-title.navbar.navbar-expand-md.bg-light
       .navbar-brand 
-        = link_to 'Share_Tax', root_path
+        = link_to 'Share_Tax', root_path, class:"title"
         .navbar-right
           - if user_signed_in?
-            = link_to '投稿する', new_post_path
-            = link_to 'ログアウト', destroy_user_session_path, method: :delete
+            = link_to '投稿する', new_post_path, class:"post"
+            = link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"logout"
           - else 
-            = link_to 'ログイン', user_session_path
-            = link_to '会員登録', new_user_registration_path
+            = link_to 'ログイン', user_session_path, class:"login"
+            = link_to '会員登録', new_user_registration_path, class:"registration"
     .container
     = yield
