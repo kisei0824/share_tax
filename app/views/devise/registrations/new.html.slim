@@ -10,7 +10,7 @@ html
             div class="mail-field" 
               = f.label :email, "メールアドレス"
               br
-              = f.email_field :email, autofocus: true, autocomplete: "email"
+              = f.email_field :email, autofocus: true, autocomplete: "email", size:"30✖️10"
             .field
             div class="password-field"
               = f.label :password, "パスワード"
@@ -20,11 +20,11 @@ html
                   = @minimum_password_length
                   | 文字以上)
               br
-              = f.password_field :password, autocomplete: "new-password"
+              = f.password_field :password, autocomplete: "new-password", size:"30✖️10"
             .field
               = f.label :password_confirmation, "パスワード(確認用)"
               br
-              = f.password_field :password_confirmation, autocomplete: "new-password"
+              = f.password_field :password_confirmation, autocomplete: "new-password", size:"30✖️10"
             .actions
               div class="field"
               = f.submit "新規会員登録"

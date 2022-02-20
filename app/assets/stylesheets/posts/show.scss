@@ -3,6 +3,14 @@ body {
   font-size: 1.4rem;
   color: rgb(51, 51, 51);
   text-size-adjust: 100%;
+  .likebutton {
+    display: inline-block;
+    color: #fff;
+    background: linear-gradient(to bottom, orange, orange);
+    font-size: 2px;
+    padding: 6px 6px;
+    border-radius: 100px;
+  }
   .show-content {
     background-color: white;
     width:720px;
