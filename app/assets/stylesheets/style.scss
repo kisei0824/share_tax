@@ -3,16 +3,15 @@
   position:relative;
   top:-1px;
   height: 80px;
-  // position: fixed;
   width: 100%;
   .navbar-brand {
-    // text-align: center;
     font-size: 25px;
     padding-right: 10px; 
     .title {
       text-decoration: none;
       color: white;
       font-family: 'Caveat', cursive;
+      font-size: 30px;
     }
     .navbar-right {
       text-align: right;
@@ -20,19 +19,23 @@
         text-decoration: none;
         color: white;
         padding: 20px;
+        font-size: 20px;
       }
-      .logaout {
+      .logout {
         text-decoration: none;
         color: white;
+        font-size: 20px;
       }
       .login {
         text-decoration: none;
         color: white;
         padding: 20px;
+        font-size: 20px;
       }
       .registration {
         text-decoration: none;
         color: white;
+        font-size: 20px;
       }
     }
   }
