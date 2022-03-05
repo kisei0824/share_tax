@@ -1,24 +1,35 @@
-# README
+# ShareTax
+# サービス概要
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+税理士業界で働き始めて間もない頃、業務上でつまづいた時にまわりに質問してもなかなか教えてもらえない、あるいは分からないといったことが多々ありました。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+そこで、業界の浅い人材でも手軽に調べて解決できる情報共有サイトをあればと思い、作ったのがShareTaxです。
 
-Things you may want to cover:
+エンジニア界隈で言うと、QiitaやZennといったサービスを模範にしており、税理士業界やバックオフィス全般に関わる人達が自発的に調べられるように情報交換を
+より活発にしていきたいというのが主な目的です。
 
-* Ruby version
+# 開発環境
 
-* System dependencies
+* Ruby2.5.1
+* Ruby on Rails 5.2.4
+* haml,scss
+* AWS(EC2,RDS,A,ALB,ACM)
+* Docker
 
-* Configuration
+# 主な機能
 
-* Database creation
+* ユーザ登録、ログイン・ログアウト機能
+* Google認証
+* 投稿のCRUD機能
+* いいね機能
+* コメント機能
+* 投稿の検索機能
+* ページネーション機能
 
-* Database initialization
+# 作成時に意識したこと
+* ソースコードはGithub flowに沿って管理、品質管理はRSpecを導入することでより実務に沿った開発を意識しました。
+* AWSのACMを利用することでSSL化し、セキュリティを向上させました。
+* デプロイ環境の開発効率を向上させるため、Dockerを導入しました。
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 拡張予定機能
+* フロントの修正
+* いいね機能のAjax化　etc
