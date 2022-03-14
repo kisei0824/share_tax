@@ -7,7 +7,7 @@ html
             = search_form_for @q, class: 'mb-5' do |f|
               .form-group.row
                 .col-sm-10
-                  =f.search_field :title_cont, class: 'form-control',placeholder: 'キーワードを入力'
+                  =f.search_field :tax_cont, class: 'form-control',placeholder: 'キーワードを入力'
                 .form-group
                   =f.submit class: 'btn'
           div class="searchResult"
@@ -17,7 +17,7 @@ html
                   tr 
                     h5=post.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[post.created_at.wday]})に投稿")
                     h5 税目:#{post.tax}
-                    h4 class="searchResult-title"= post.title
+                    h4 class="searchResult-title"= post.tax
                     =post.description.truncate(10)
                     div class="searchResult-text" = link_to "続きを読む", post_path(post)
               ul
