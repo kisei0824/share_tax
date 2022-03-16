@@ -12,7 +12,8 @@
 * Ruby2.5.1
 * Ruby on Rails 5.2.4
 * haml,scss
-* AWS(EC2,RDS,A,ALB,ACM)
+* PostgreSQL
+* AWS(EC2,RDS,VPC)
 * Docker
 
 # 主な機能
@@ -27,9 +28,9 @@
 
 # 作成時に意識したこと
 * ソースコードはGithub flowに沿って管理、品質管理はRSpecを導入することでより実務に沿った開発を意識しました。
-* AWSのACMを利用することでSSL化し、セキュリティを向上させました。
-* デプロイ環境の開発効率を向上させるため、Dockerを導入しました。
+* デプロイ環境の開発効率を向上させるため、既存のアプリをDockerを使って開発環境に導入しました。
 
 # 拡張予定機能
 * フロントの修正
-* いいね機能のAjax化　etc
+* 独自ドメインの取得、SSL化
+* 本番環境にDockerを導入 etc
