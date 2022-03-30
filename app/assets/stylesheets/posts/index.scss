@@ -34,20 +34,23 @@
     background-color: white;
     width:720px;
     margin: auto;
+    .searchResult-text {
+      display: block;
+      padding: 10px;
+      border: 1px solid #222;
+      background-color: #FFF;
+      color: #222;
+      border-radius: 6px;
+      text-align: center;
+      width: 680px;
+    }
+    .day {
+      color: rgb(177, 168, 168);
+    }
     table {
       text-align: center;
       margin: auto;
       font-size: 30px;
     }
   }
-}
-.searchResult-text {
-  display: block;
-  padding: 10px;
-  border: 1px solid #222;
-  background-color: #FFF;
-  color: #222;
-  border-radius: 6px;
-  text-align: center;
-  width: 680px;
 }
