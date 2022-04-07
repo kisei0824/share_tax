@@ -1,4 +1,4 @@
-.contents {
+html {
   background-color: #f6f6f4;
   margin: auto;
   .search-content {
@@ -7,6 +7,11 @@
     height:230px;
     margin: auto;
     border-bottom: 1px solid #eee;
+    .text-content {
+      position: absolute;
+      left: 490px;
+      bottom: 550px;
+    }
     .form-control {
       width: 200px;
       height: 30px;
@@ -34,23 +39,27 @@
     background-color: white;
     width:720px;
     margin: auto;
-    .searchResult-text {
-      display: block;
-      padding: 10px;
-      border: 1px solid #222;
-      background-color: #FFF;
-      color: #222;
-      border-radius: 6px;
-      text-align: center;
-      width: 680px;
-    }
-    .day {
-      color: rgb(177, 168, 168);
-    }
-    table {
-      text-align: center;
-      margin: auto;
-      font-size: 30px;
+    .searchResult_main {
+      border : 2px solid #f6f6f4 ;
+      .searchResult-text {
+        display: block;
+        padding: 10px;
+        border: 1px solid #222;
+        background-color: #FFF;
+        color: #222;
+        border-radius: 6px;
+        text-align: center;
+        width: 695px;
+      }
+      .day {
+        color: gray;
+        font-size:16px;
+      }
+      table {
+        text-align: center;
+        margin: auto;
+        font-size: 20px;
+      }
     }
   }
 }

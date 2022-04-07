@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  validates :tax, :title, presence: true
+  validates :tax, presence: true
 
   belongs_to :user
   has_many :comments, dependent: :destroy
