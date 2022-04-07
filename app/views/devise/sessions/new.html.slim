@@ -8,9 +8,9 @@ html
         div class="login-form"
           = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
             div class="mail-field" 
-              = f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"メールアドレス", size:"30✖️10"
+              = f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"メールアドレス", size:"35✖️10"
             div class="password-field"
-              = f.password_field :password, autocomplete: "current-password", placeholder:"パスワード", size:"30✖️10"
+              = f.password_field :password, autocomplete: "current-password", placeholder:"パスワード", size:"35✖️10"
             - if devise_mapping.rememberable?
               div class="field"
                 = f.check_box :remember_me

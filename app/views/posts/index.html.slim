@@ -4,6 +4,7 @@ html
       header class="header"
         div class="contents"
           div class="search-content"
+            div class="text-content" バックオフィスのための情報共有サービスです
             = search_form_for @q, class: 'mb-5' do |f|
               .form-group.row
                 .col-sm-10
@@ -11,14 +12,14 @@ html
                 .form-group
                   =f.submit class: 'btn'
           div class="searchResult"
-            div class="searchResult_main"
             div class="searchResult_sub"
               - @posts.each do |post|
                   tr 
-                    h5 class="day" = post.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[post.created_at.wday]})に投稿")
-                    h4 class="searchResult-title"= post.tax
-                    =post.description.truncate(10)
-                    div class="searchResult-text" = link_to "続きを読む", post_path(post)
+                    div class="searchResult_main"
+                      h5 class="day" = post.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[post.created_at.wday]})に投稿")
+                      h4 class="searchResult-title"= post.tax
+                      =post.description.truncate(10)
+                      div class="searchResult-text" = link_to "続きを読む", post_path(post)
               ul
                 - @posts.each do |post|
                 = paginate @posts
