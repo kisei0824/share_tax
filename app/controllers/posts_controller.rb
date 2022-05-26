@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:create]
   def index
     @q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: true).page(params[:page]).per(5)
+    @posts = @q.result(distinct: true).page(params[:page]).per(5).sorted
     # @posts = Post.all
   end
 
