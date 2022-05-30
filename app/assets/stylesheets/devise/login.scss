@@ -9,13 +9,29 @@
     margin: auto;
   }
   .mail-field {
-    height: 50px;
+    height: 30px;
+    width: 250px;
+    border: 1px solid #222;
+    border-radius: 6px;
+    position: relative;
+    top:25px;
   }
   .password-field {
-    // height: 50px;
+    height: 30px;
+    width: 250px;
+    border: 1px solid #222;
+    border-radius: 6px;
+    position: relative;
+    top:30px;
   }
-  .field {
-    height: 50px;
+  .registration-field {
+    height: 30px;
+    width: 255px;
+    border: 1px solid #222;
+    border-radius: 6px;
+    position: relative;
+    top:60px;
+    background-color: red;
   }
 }
 
@@ -30,24 +46,40 @@
     margin: auto;
   }
   .mail-field {
-    height: 50px;
+    height: 30px;
+    width: 250px;
+    border: 1px solid #222;
+    border-radius: 6px;
+    margin-bottom: 20px
   }
   .password-field {
-    // height: 50px;
+    height: 30px;
+    width: 250px;
+    border: 1px solid #222;
+    border-radius: 6px;
   }
   .field {
     height: 50px;
+  }
+  .actions {
+    height: 30px;
+    width: 250px;
+    border: 1px solid #222;
+    border-radius: 6px;
+    background-color: orange;
   }
 }
 
 .new-form {
   padding: 10px;
   border: 1px solid #222;
-  background-color: white;
   border-radius: 6px;
   width: 250px;
   position: relative;
-  top: 30px;
+  top: 40px;
+  background-color: rgb(0, 208, 255);
+  color: white;
+  text-decoration: none;
 }
 
 .btn-sns-google {
