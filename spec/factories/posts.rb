@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :post do
     tax { 'テスト' }
-    title { 'テストをかく' }
-    description  { 'RspecCapybaraFactoryBotを準備する' }
+    title { '最初の投稿' }
+    description  { '最初の投稿' }
     user
   end
 end
