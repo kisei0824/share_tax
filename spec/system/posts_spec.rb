@@ -1,21 +1,22 @@
 require 'rails_helper'
-describe 'タスク管理機能', type: :system do
+
+describe '投稿機能', type: :system do
   describe '一覧表示機能' do
+    let(:user) { FactoryBot.create(:user) }
+
     before do
-      user_a = FactoryBot.create(:user)
-      FactoryBot.create(:post, tax: 'テスト', title: '最初のタスク', user: user_a)
+      FactoryBot.create(:post, user: user)
+      visit user_session_path
+      fill_in 'メールアドレス', with: login_user.email
+      fill_in 'パスワード', with: login_user.password
+      click_button 'ログイン'
     end
 
-    context 'ユーザAがログインしているとき' do
-      before do
-        visit user_session_path
-        fill_in 'Email', with: 'test@example.com'
-        fill_in 'Password', with: 'aaa111'
-        click_button 'Log in'
-      end
+    context 'ユーザがログインしているとき' do
+      let(:login_user) { user }
 
-      it 'ユーザAが作成したタスクが表示される' do
-        expect(page).to have_content '最初のタスク'
+      it 'ユーザが作成した投稿が表示される' do
+        expect(page).to have_content '最初の投稿'
       end
     end
   end
