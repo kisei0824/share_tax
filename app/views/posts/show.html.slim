@@ -19,17 +19,17 @@ html
             =@post.created_at.strftime("投稿日 %Y/%m/%d(#{%w(日 月 火 水 木 金 土)[@post.created_at.wday]})　")
             =@post.updated_at.strftime("更新日 %Y/%m/%d(#{%w(日 月 火 水 木 金 土)[@post.updated_at.wday]})")
           h3=@post.title
-          divh3= @post.description
-        div class="searchResult"
-          div class="searchResult_main"
-            <h4>コメント</h4>
-              = form_with(model:[@post, @comment], method: :post) do |f|
-                = f.text_area :content, :size => "90*90"
-                = f.hidden_field :post_id, value: @post.id
-                = f.submit 'コメントする'
+          h3= @post.description
+          div class="searchResult"
+            div class="searchResult_main"
+              <h4>コメント</h4>
+                = form_with(model:[@post, @comment], method: :post) do |f|
+                  = f.text_area :content, :size => "90*90"
+                  = f.hidden_field :post_id, value: @post.id
+                  = f.submit 'コメントする'
 
-            <h4>コメント一覧</h4>
-              - @comments.each do |comment|
-                h5= comment.user_id
-                h4= comment.content
-          div class="searchResult_sub"
+              <h4>コメント一覧</h4>
+                - @comments.each do |comment|
+                  h5= comment.user_id
+                  h4= comment.content
+            div class="searchResult_sub"
