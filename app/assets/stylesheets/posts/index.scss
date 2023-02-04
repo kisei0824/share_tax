@@ -39,6 +39,7 @@ html {
     background-color: white;
     width:720px;
     margin: auto;
+    border-bottom: 1px solid #eee;
     .searchResult_main {
       border : 2px solid #f6f6f4 ;
       .searchResult-text {
@@ -50,6 +51,7 @@ html {
         border-radius: 6px;
         text-align: center;
         width: 695px;
+        text-decoration: none;
       }
       .day {
         color: gray;
