@@ -11,6 +11,7 @@ html {
       position: absolute;
       left: 490px;
       bottom: 550px;
+      font-weight: bold;
     }
     .form-control {
       width: 200px;
@@ -46,12 +47,13 @@ html {
         display: block;
         padding: 10px;
         border: 1px solid #222;
-        background-color: #FFF;
+        background-color: #f6f6f4;
         color: #222;
         border-radius: 6px;
         text-align: center;
-        width: 695px;
+        width: 685px;
         text-decoration: none;
+        transform: translate(5px);
       }
       .day {
         color: gray;
