@@ -43,6 +43,15 @@ html {
     border-bottom: 1px solid #eee;
     .searchResult_main {
       border : 2px solid #f6f6f4 ;
+      .comment-field {
+        border-radius: 12px;
+        width:98%;
+      }
+      .comment {
+        background-color: #222;
+        color:#eee;
+        border-radius: 6px;
+      }
       .searchResult-text {
         display: block;
         padding: 10px;
