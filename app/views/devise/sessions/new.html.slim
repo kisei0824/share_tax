@@ -6,6 +6,7 @@ html
         div class="searchResult"
             = render "devise/shared/links"
         div class="login-form"
+          div  class="login-text" ログイン
           = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
             div = f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"メールアドレス", class:"mail-field" 
             div = f.password_field :password, autocomplete: "current-password", placeholder:"パスワード", class:"password-field"
