@@ -21,10 +21,11 @@ html
                       =post.description.truncate(10)
                       div 
                       h6 = link_to "続きを読む", post_path(post), class:"searchResult-text"
-              ul
-                - @posts.each do |post|
-                = paginate @posts
-    
+      ul
+        div class="post-paginate"
+          - @posts.each do |post|
+          = paginate @posts
+      
     javascript:
       $('.btn').mouseover(function() {
         $('.btn').css({
