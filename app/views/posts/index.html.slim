@@ -27,16 +27,19 @@ html
           = paginate @posts
       
     javascript:
-      $('.btn').mouseover(function() {
-        $('.btn').css({
-            color: "#f6f6f4",
-            backgroundColor: "#222"
-        }); 
-      });;
+      $(document).ready(function(){
+        // マウス上に乗った時、背景変える。
+        $('.btn').mouseover(function() {
+          $('.btn').css({
+              color: "#f6f6f4",
+              backgroundColor: "#222"
+          }); 
+        });;
 
-      $('.btn').mouseout(function() {
-        $('.btn').css({
-            backgroundColor: "orange"
-        }); 
-      });;
+        $('.btn').mouseout(function() {
+          $('.btn').css({
+              backgroundColor: "orange"
+          }); 
+        });;
+      });
 
