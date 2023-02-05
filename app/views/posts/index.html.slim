@@ -19,8 +19,27 @@ html
                       h5 class="day" = post.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[post.created_at.wday]})に投稿")
                       h4 class="searchResult-title"= post.title
                       =post.description.truncate(10)
-                      h5 = link_to "続きを読む", post_path(post), class:"searchResult-text"
-              ul
-                - @posts.each do |post|
-                = paginate @posts
+                      div 
+                      h6 = link_to "続きを読む", post_path(post), class:"searchResult-text"
+      ul
+        div class="post-paginate"
+          - @posts.each do |post|
+          = paginate @posts
+      
+    javascript:
+      $(document).ready(function(){
+        // マウス上に乗った時、背景変える。
+        $('.btn').mouseover(function() {
+          $('.btn').css({
+              color: "#f6f6f4",
+              backgroundColor: "#222"
+          }); 
+        });;
+
+        $('.btn').mouseout(function() {
+          $('.btn').css({
+              backgroundColor: "orange"
+          }); 
+        });;
+      });
 

@@ -24,12 +24,11 @@ html
             div class="searchResult_main"
               <h4>コメント</h4>
                 = form_with(model:[@post, @comment], method: :post) do |f|
-                  = f.text_area :content, :size => "90*90"
+                  = f.text_area :content, :size => "90*90", class:"comment-field"
                   = f.hidden_field :post_id, value: @post.id
-                  = f.submit 'コメントする'
+                  = f.submit 'コメントする', class:"comment"
 
               <h4>コメント一覧</h4>
                 - @comments.each do |comment|
                   h5= comment.user_id
                   h4= comment.content
-            div class="searchResult_sub"
