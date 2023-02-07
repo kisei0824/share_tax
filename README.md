@@ -8,7 +8,7 @@
 より活発にしていきたいというのが主な目的です。
 
 # URL
-18.180.9.144
+52.197.21.151
 
 テストユーザアカウント
 * メールアドレス　test@example.com
@@ -17,8 +17,9 @@
 # 開発環境
 
 * Ruby2.6.3
-* Ruby on Rails 5.2.4
-* haml,scss
+* Ruby on Rails 5.2.8
+* slim,scss
+* jQuery
 * PostgreSQL
 * AWS(EC2,RDS,VPC)
 * Docker
@@ -38,6 +39,5 @@
 * デプロイ環境の開発効率を向上させるため、既存のアプリをDockerを使って開発環境に導入しました。
 
 # 拡張予定機能
-* フロントの修正
 * 独自ドメインの取得、SSL化
 * 本番環境にDockerを導入 etc
