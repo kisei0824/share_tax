@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.joins(:category).find(params[:id])
     @comments = @post.comments.includes(:user)
     @comment = @post.comments.build
     @like = Like.new
@@ -15,6 +15,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @parents = Category.where(ancestry: nil)
   end
 
   def edit
@@ -42,9 +43,17 @@ class PostsController < ApplicationController
     end
   end
 
+  def set_parents
+    @parents = Category.where(ancestry: nil)
+  end
+
+  def get_category_children
+    @category_children = Category.find("#{params[:parent_id]}").children
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:tax, :title, :description)
+    params.require(:post).permit(:title, :description, :category_id)
   end
 end

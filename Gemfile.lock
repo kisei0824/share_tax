@@ -44,6 +44,8 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
+    ancestry (4.2.0)
+      activerecord (>= 5.2.6)
     arel (9.0.0)
     autoprefixer-rails (10.4.7.0)
       execjs (~> 2)
@@ -330,6 +332,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ancestry
   bootsnap (>= 1.1.0)
   bootstrap-sass
   byebug
