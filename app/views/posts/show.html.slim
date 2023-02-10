@@ -13,11 +13,13 @@ html
                     = button_to 'いいね', post_likes_path(@post), class: "likebutton"
           
           - if @post.user == current_user
-              =link_to '編集', edit_post_path, class: "editbutton"
-              =link_to '削除', @post, method: :delete, data: {confirm: "本当に削除してよろしいですか?"}, class: "deletebutton"
+              =link_to '編集する', edit_post_path, class: "editbutton"
+              =link_to '削除する', @post, method: :delete, data: {confirm: "本当に削除してよろしいですか?"}, class: "deletebutton"
           div class="day"
             =@post.created_at.strftime("投稿日 %Y/%m/%d(#{%w(日 月 火 水 木 金 土)[@post.created_at.wday]})　")
             =@post.updated_at.strftime("更新日 %Y/%m/%d(#{%w(日 月 火 水 木 金 土)[@post.updated_at.wday]})")
+          div class="category"
+            ジャンル=@post.category.item
           h3=@post.title
           h3= @post.description
           div class="searchResult"

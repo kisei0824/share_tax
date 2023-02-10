@@ -26,12 +26,27 @@ body {
     }
     .editbutton {
       text-decoration: none;
+      font-size:18px;
+      margin-right:16px;
+      border: 1px solid #222;
+      border-radius: 6px;
+      color:white;
+      background-color: #84b8eb;
     }
     .deletebutton {
       text-decoration: none;
+      font-size:18px;
+      border: 1px solid #222;
+      border-radius: 6px;
+      color:white;
+      background-color: #84b8eb;
     }
     .day {
+      color: gray;
       font-size: 18px;
+    }
+    .category {
+      font-size: 15px;
     }
   }
   .css-2imjyh {

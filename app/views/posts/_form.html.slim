@@ -7,7 +7,7 @@ html
             h2 新規登録
             = form_with model: post, local: true do |f|
               .tax-group 
-                = f.text_field :tax, class: 'tax-control', id: 'post_tax',placeholder: '税金名を入力'
+                = f.collection_select :category_id, Category.where(ancestry: nil), :id, :item,{ include_blank: "選択してください"}, id:"item_category_id", class: 'category-control'
               .title-group 
                 = f.text_field :title, class: 'title-control', id: 'post_title',placeholder: 'タイトルを入力'
               .description-group 

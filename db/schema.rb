@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_02_033601) do
+ActiveRecord::Schema.define(version: 2023_02_09_072042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "item", null: false
+    t.string "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
+    t.index ["item"], name: "index_categories_on_item"
+  end
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
@@ -35,12 +44,13 @@ ActiveRecord::Schema.define(version: 2022_01_02_033601) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "tax", null: false
     t.string "title", null: false
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -62,4 +72,5 @@ ActiveRecord::Schema.define(version: 2022_01_02_033601) do
   add_foreign_key "comments", "users"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
+  add_foreign_key "posts", "categories"
 end

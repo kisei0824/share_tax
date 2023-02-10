@@ -8,7 +8,7 @@ html
             = search_form_for @q, class: 'mb-5' do |f|
               .form-group.row
                 .col-sm-10
-                  =f.search_field :tax_cont, class: 'form-control',placeholder: 'キーワードを入力'
+                  =f.search_field :title_cont, class: 'form-control',placeholder: 'キーワードを入力'
                 .form-group
                   =f.submit class: 'btn'
           div class="searchResult"
@@ -25,7 +25,7 @@ html
         div class="post-paginate"
           - @posts.each do |post|
           = paginate @posts
-      
+          
     javascript:
       $(document).ready(function(){
         // マウス上に乗った時、背景変える。
