@@ -4,6 +4,10 @@ Rails.application.routes.draw do
     collection do
       get 'new_post'
     end
+
+    member do
+      get 'search'
+    end
     resources :comments, only: [:create]
     resources :likes, only: [:create, :destroy]
   end
