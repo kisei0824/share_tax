@@ -4,6 +4,7 @@ class PostsController < ApplicationController
     @q = Post.ransack(params[:q])
     @posts = @q.result(distinct: true).page(params[:page]).per(5).sorted
     # @posts = Post.all
+    @parents = Category.where(ancestry: nil)
   end
 
   def show
@@ -43,12 +44,16 @@ class PostsController < ApplicationController
     end
   end
 
-  def set_parents
+  def search
     @parents = Category.where(ancestry: nil)
-  end
+    @category = Category.find_by(id: params[:id])
 
-  def get_category_children
-    @category_children = Category.find("#{params[:parent_id]}").children
+    if @category.ancestry == nil
+      category = Category.find_by(id: params[:id]).indirect_ids
+      if category.empty?
+        @posts = Post.where(category_id: @category.id).order(created_at: :desc)
+      end
+    end
   end
 
   private

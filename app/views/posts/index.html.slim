@@ -2,7 +2,16 @@ html
   head
     body
       header class="header"
-        div class="contents"
+        div class="contents"  
+          div class="sidebar"
+            div class="item_categories"
+            = link_to "カテゴリーから探す",  posts_path, class: "category-button", id: 'categoBtn'
+            div id="tree_menu"
+              ul class="categoryTree"
+                - @parents.each do |parent|
+                  li class="category_parent"
+                    = link_to search_post_path(parent) do
+                      input type="button" value="#{parent.item}" name="#{parent.id}" class="parent_btn"
           div class="search-content"
             div class="text-content" バックオフィスのための情報共有サービスです
             = search_form_for @q, class: 'mb-5' do |f|
@@ -28,7 +37,7 @@ html
           
     javascript:
       $(document).ready(function(){
-        // マウス上に乗った時、背景変える。
+        // ボタン上に乗った時、オレンジから黒を変化
         $('.btn').mouseover(function() {
           $('.btn').css({
               color: "#f6f6f4",
@@ -43,3 +52,68 @@ html
         });;
       });
 
+      $(document).ready(function () {
+        // 親カテゴリーを表示
+        $('#categoBtn').hover(function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          $('#tree_menu').show();
+          $('.categoryTree').show();
+        }, function () {
+          // あえて何も記述しない
+        });
+
+        // カテゴリーを表示
+        $('#categoBtn').hover(function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          timeOut = setTimeout(function () {
+            $('#tree_menu').show();
+            $('.categoryTree').show();
+          }, 500)
+        }, function () {
+          clearTimeout(timeOut)
+        });
+
+        // カテゴリーを非表示(カテゴリーメニュから0.8秒以上カーソルを外したら消える)
+        $(document).on({
+          mouseleave: function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+            timeChosed = setTimeout(function () {
+              $(".categoryTree").hide();
+              $(this).hide();
+              $('.parent_btn').css('color', '');
+              $('.parent_btn').css('background-color', '');
+            }, 800);
+          },
+          mouseenter: function () {
+            timeChosed = setTimeout(function () {
+              $(".categoryTree").hide();
+              $(this).hide();
+              $('.parent_btn').css('color', '');
+              $('.parent_btn').css('background-color', '');
+            }, 800);
+            clearTimeout(timeChosed);
+          }
+        }, '#tree_menu');
+
+        // カテゴリーボタンの処理
+        $(document).on({
+          mouseenter: function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+            timeOpened = setTimeout(function () {
+              $('#tree_menu').show();
+              $('.categoryTree').show();
+            }, 500);
+          },
+          mouseleave: function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+            clearTimeout(timeOpened);
+            $(".categoryTree").hide();
+            $("#tree_menu").hide();
+          }
+        }, '.header__headerInner__nav__listsLeft__item');
+      });

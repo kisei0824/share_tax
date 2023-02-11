@@ -1,6 +1,42 @@
 html {
   background-color: #f6f6f4;
   margin: auto;
+  .sidebar {
+    margin-top:76px;
+    margin-left:42px;
+    float:left;
+    .category-button {
+      text-decoration: none;
+      color:#222;
+    }
+    .categoryTree {
+      display: none;
+      height: 100%;
+      border: 1px solid orange;
+      background-color: #ffffff;
+      border-radius: 4px;
+      box-shadow: 4px 4px 4px #999;
+      list-style: none;
+      a {
+        padding: 0;
+        input[type='button'] {
+          min-width: 110px;
+          height: 35px;
+          font-size: 14px;
+          text-decoration: none;
+          color: orange;
+          background: #ffffff;
+          outline: none;
+          transition: 0.4s;
+          border: #ffffff;
+        }
+        input[type='button']:hover {
+          background-color: orange;
+          color: white;
+        }
+      }
+    }
+  }
   .search-content {
     background-color: white;
     width:720px;
