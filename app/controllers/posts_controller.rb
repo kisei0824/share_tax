@@ -5,6 +5,7 @@ class PostsController < ApplicationController
     @posts = @q.result(distinct: true).page(params[:page]).per(5).sorted
     # @posts = Post.all
     @parents = Category.where(ancestry: nil)
+    @all_ranks = Post.create_all_ranks
   end
 
   def show

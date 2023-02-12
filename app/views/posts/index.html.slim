@@ -4,6 +4,10 @@ html
       header class="header"
         div class="contents"  
           div class="sidebar"
+            div class="rankMenu"
+                h5 いいね数ランキング
+                - @all_ranks.each.with_index(1) do |post, i|
+                  h5= link_to "#{i}位 #{post.title.truncate(10)}", post_path(post), class: 'rank-btn'
             div class="item_categories"
             = link_to "カテゴリーから探す",  posts_path, class: "category-button", id: 'categoBtn'
             div id="tree_menu"
