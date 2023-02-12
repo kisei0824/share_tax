@@ -2,9 +2,16 @@ html {
   background-color: #f6f6f4;
   margin: auto;
   .sidebar {
-    margin-top:76px;
-    margin-left:42px;
+    margin-top:2px;
+    margin-left:58px;
     float:left;
+    .rank-btn {
+      text-decoration: none;
+      color:#222;
+    }
+    .rank-btn:hover {
+      color:orange;
+    }
     .category-button {
       text-decoration: none;
       color:#222;
@@ -35,6 +42,21 @@ html {
           color: white;
         }
       }
+    }
+    .rankMenu {
+      margin-top:33px;
+      background-color: white;
+      height:150px;
+      box-shadow: 3px 3px 3px #999;
+      h5 {
+        font-weight: normal;
+        border-bottom: 1px solid #eee;
+        margin-block-start: 0.6em;
+        margin-block-end: 0.6em;
+      }
+    }
+    .item_categories {
+      margin-top:20px;
     }
   }
   .search-content {
