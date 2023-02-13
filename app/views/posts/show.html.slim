@@ -5,12 +5,14 @@ html
         div class="show-content"
           div class="likes"
               = @post.likes.count
-              - if current_user
-                - if @post.user != current_user
-                  - if current_user.already_liked?(@post)
-                    = button_to 'いいねを取り消す', post_like_path(@post), method: :delete, class: "likebutton"
-                  - else
-                    = button_to 'いいね', post_likes_path(@post), class: "likebutton"
+              / ログイン済でかつ、投稿者でない記事を表示している場合
+              - if current_user && @post.user != current_user
+                - if current_user.already_liked?(@post)
+                  = button_to 'いいねを取り消す', post_like_path(@post), method: :delete, class: "likebutton"
+                - else
+                  = button_to 'いいね', post_likes_path(@post), class: "likebutton"
+              - else
+                = button_to 'いいね', post_likes_path(@post), class: "likebutton", disabled: true
           
           - if @post.user == current_user
               =link_to '編集する', edit_post_path, class: "editbutton"
