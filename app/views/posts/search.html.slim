@@ -1,21 +1,60 @@
-header class="header"
-        div class="contents"  
-          div class="sidebar"
-            div class="item_categories"
-              = link_to  "カテゴリーから探す", posts_path, class: "category-button", id: 'categoBtn' 
-              div id="tree_menu"
-                ul class="categoryTree"
-                  - @parents.each do |parent|
-                    li class="category_parent"
-                      = link_to search_post_path(parent) do
-                        input type="button" value='#{parent.item}' name="<%= parent.id %>" class="parent_btn"
-          div class="searchResult"
-            div class="searchResult_sub"
-              - @posts.each do |post|
-                  tr 
-                    div class="searchResult_main"
-                      h5 class="day" = post.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[post.created_at.wday]})に投稿")
-                      h4 class="searchResult-title"= post.title
-                      =post.description.truncate(10)
-                      div 
-                      h6 = link_to "続きを読む", post_path(post), class:"searchResult-text"
+body
+  header class="header"
+          div class="contents"  
+            div class="sidebar"
+              div class="item_categories"
+                = link_to  "カテゴリーから探す", posts_path, class: "category-button", id: 'categoBtn' 
+                div id="tree_menu"
+                  ul class="categoryTree"
+                    - @parents.each do |parent|
+                      li class="category_parent"
+                        = link_to search_post_path(parent) do
+                          input type="button" value='#{parent.item}' name="<%= parent.id %>" class="parent_btn"
+            div class="searchResult"
+              div class="searchResult_sub"
+                - @posts.each do |post|
+                    tr 
+                      div class="searchResult_main"
+                        h5 class="day" = post.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[post.created_at.wday]})に投稿")
+                        h4 class="searchResult-title"= post.title
+                        =post.description.truncate(10)
+                        div 
+                        h6 = link_to "続きを読む", post_path(post), class:"searchResult-text"
+
+javascript:
+  $(document).ready(function () {
+        // カテゴリーを表示
+        $('#categoBtn').hover(function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          timeOut = setTimeout(function () {
+            $('#tree_menu').show();
+            $('.categoryTree').show();
+          }, 500)
+        }, function () {
+          clearTimeout(timeOut)
+        });
+
+        // カテゴリーを非表示(カテゴリーメニュから0.8秒以上カーソルを外したら消える)
+        $(document).on({
+          mouseleave: function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+            timeChosed = setTimeout(function () {
+              $(".categoryTree").hide();
+              $(this).hide();
+              $('.parent_btn').css('color', '');
+              $('.parent_btn').css('background-color', '');
+            }, 800);
+          },
+          mouseenter: function () {
+            timeChosed = setTimeout(function () {
+              $(".categoryTree").hide();
+              $(this).hide();
+              $('.parent_btn').css('color', '');
+              $('.parent_btn').css('background-color', '');
+            }, 800);
+            clearTimeout(timeChosed);
+          }
+        }, '#tree_menu');
+      });
