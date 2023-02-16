@@ -1,43 +1,42 @@
 html
   head
     body
-      header class="header"
-        div class="contents"  
-          div class="sidebar"
-            div class="rankMenu"
-                h5 いいね数ランキング
-                - @all_ranks.each.with_index(1) do |post, i|
-                  h5= link_to "#{i}位 #{post.title.truncate(10)}", post_path(post), class: 'rank-btn'
-            div class="item_categories"
-            = link_to "カテゴリーから探す",  posts_path, class: "category-button", id: 'categoBtn'
-            div id="tree_menu"
-              ul class="categoryTree"
-                - @parents.each do |parent|
-                  li class="category_parent"
-                    = link_to search_post_path(parent) do
-                      input type="button" value="#{parent.item}" name="#{parent.id}" class="parent_btn"
-          div class="search-content"
-            div class="text-content" バックオフィスのための情報共有サービスです
-            = search_form_for @q, class: 'mb-5' do |f|
-              .form-group.row
-                .col-sm-10
-                  =f.search_field :title_cont, class: 'form-control',placeholder: 'キーワードを入力'
-                .form-group
-                  =f.submit class: 'btn'
-          div class="searchResult"
-            div class="searchResult_sub"
-              - @posts.each do |post|
-                  tr 
-                    div class="searchResult_main"
-                      h5 class="day" = post.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[post.created_at.wday]})に投稿")
-                      h4 class="searchResult-title"= post.title
-                      =post.description.truncate(10)
-                      div 
-                      h6 = link_to "続きを読む", post_path(post), class:"searchResult-text"
-      ul
-        div class="post-paginate"
-          - @posts.each do |post|
-          = paginate @posts
+      div class="contents"  
+        div class="sidebar"
+          div class="rankMenu"
+              h5 いいね数ランキング
+              - @all_ranks.each.with_index(1) do |post, i|
+                h5= link_to "#{i}位 #{post.title.truncate(10)}", post_path(post), class: 'rank-btn'
+          div class="item_categories"
+          = link_to "カテゴリーから探す",  posts_path, class: "category-button", id: 'categoBtn'
+          div id="tree_menu"
+            ul class="categoryTree"
+              - @parents.each do |parent|
+                li class="category_parent"
+                  = link_to search_post_path(parent) do
+                    input type="button" value="#{parent.item}" name="#{parent.id}" class="parent_btn"
+        div class="search-content"
+          div class="text-content" バックオフィスのための情報共有サービスです
+          = search_form_for @q, class: 'mb-5' do |f|
+            .form-group.row
+              .col-sm-10
+                =f.search_field :title_cont, class: 'form-control',placeholder: 'キーワードを入力'
+              .form-group
+                =f.submit class: 'btn'
+        div class="searchResult"
+          div class="searchResult_sub"
+            - @posts.each do |post|
+                tr 
+                  div class="searchResult_main"
+                    h5 class="day" = post.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[post.created_at.wday]})に投稿")
+                    h4 class="searchResult-title"= post.title
+                    =post.description.truncate(10)
+                    div 
+                    h6 = link_to "続きを読む", post_path(post), class:"searchResult-text"
+    ul
+      div class="post-paginate"
+        - @posts.each do |post|
+        = paginate @posts
           
     javascript:
       $(document).ready(function(){
