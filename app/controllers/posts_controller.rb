@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.joins(:category).find(params[:id])
-    @comments = @post.comments.includes(:user)
+    @comments = @post.comments
     @comment = @post.comments.build
     @like = Like.new
   end
