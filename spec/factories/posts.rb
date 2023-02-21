@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :post do
-    tax { 'テスト' }
-    title { '最初の投稿' }
-    description  { '最初の投稿' }
+    category { '会計' }
+    title { '簿記について' }
+    description  { 'テスト' }
     user
   end
 end
